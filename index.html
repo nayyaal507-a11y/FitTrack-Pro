@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitTrack Pro - Radiant Edition</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="radiant-bg"></div>
+
+    <div class="container">
+        <header class="header">
+            <h1>FitTrack <span>Pro</span></h1>
+            <p>Presisi Nutrisi dalam Genggaman Anda.</p>
+        </header>
+
+        <div class="main-grid">
+            <section class="card profile-card">
+                <h2>Profil & Target</h2>
+                <div class="input-group">
+                    <label>Jenis Kelamin</label>
+                    <select id="gender">
+                        <option value="Wanita">Wanita</option>
+                        <option value="Pria">Pria</option>
+                    </select>
+                </div>
+                
+                <div class="row">
+                    <div class="input-group flex-1">
+                        <label>Umur</label>
+                        <input type="number" id="age" value="19" min="1">
+                    </div>
+                    <div class="input-group flex-1">
+                        <label>Berat (kg)</label>
+                        <input type="number" id="weight" value="48" min="1">
+                    </div>
+                    <div class="input-group flex-1">
+                        <label>Tinggi (cm)</label>
+                        <input type="number" id="height" value="167" min="1">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Tujuan Program</label>
+                    <select id="goal">
+                        <option value="maintain">Maintenance (Jaga BB)</option>
+                        <option value="bulking">Bulking (Naikkan BB)</option>
+                        <option value="cutting">Cutting (Turunkan BB)</option>
+                    </select>
+                </div>
+
+                <div class="button-group">
+                    <button id="btnSave" class="btn btn-primary">Simpan Target</button>
+                    <button id="btnReset" class="btn btn-secondary">Reset Data</button>
+                </div>
+            </section>
+
+            <section class="card log-card">
+                <h2>Log Makanan</h2>
+                <div class="row food-input-row">
+                    <input type="text" id="foodName" placeholder="Nama makanan..." class="flex-2">
+                    <input type="number" id="foodCal" placeholder="kkal" class="flex-1">
+                </div>
+                <button id="btnAddFood" class="btn btn-accent">Tambah Makanan</button>
+
+                <div class="status-box">
+                    <div class="status-info">
+                        <span>Asupan Hari Ini</span>
+                        <span class="counter"><strong id="totalEaten">0</strong> / <span id="targetCal">2000</span> kkal</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div id="progressBar" class="progress-bar-fill"></div>
+                    </div>
+                </div>
+
+                <ul id="foodList" class="food-list"></ul>
+            </section>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
