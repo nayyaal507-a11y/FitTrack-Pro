@@ -94,6 +94,15 @@ window.onload = () => {
         document.getElementById('weight').value = data.profile.weight;
         document.getElementById('height').value = data.profile.height;
         document.getElementById('goal').value = data.profile.goal;
+
     }
     updateUI();
 };
+
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js')
+        .then(reg => console.log("Service Worker Registered", reg))
+        .catch(err => console.log("Service Worker Failed", err));
+  });
+}
